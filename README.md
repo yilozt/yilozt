@@ -1,1 +1,1 @@
-<img style="scale: 40%" src="img.jpg" />
+<img src="img.jpg" style="width: 250px; height: auto;" />
