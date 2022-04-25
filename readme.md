@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="img.gif" style="width: 250px; height: auto;"/>
+    <img src="http://pic.imgdb.cn/item/62660006239250f7c5543f40.gif" style="width: 250px; height: auto;"/>
 </p>
 
 <p align="center">
