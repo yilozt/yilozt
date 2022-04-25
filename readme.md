@@ -3,8 +3,12 @@
 </p>
 
 <p align="center">
+    <a href="https://github-readme-stats.vercel.app/api?username=yilozt&show_icons=true&theme=graywhite&hide_title=true&hide_border=true">
     <img src="https://github-readme-stats.vercel.app/api?username=yilozt&show_icons=true&theme=graywhite&hide_title=true&hide_border=true"/>
+    </a>
 </p>
 <p align="center">
+    <a href="https://github-readme-stats.vercel.app/api/wakatime?username=yilozt&theme=graywhite&hide_border=true">
     <img src="https://github-readme-stats.vercel.app/api/wakatime?username=yilozt&theme=graywhite&hide_border=true"/>
+    </a>
 </p>
