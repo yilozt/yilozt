@@ -8,8 +8,8 @@
     </a>
   </p>
   <p>
-    <a href="https://github-readme-stats.vercel.app/api/wakatime?username=yilozt&theme=graywhite&hide_border=true">
-      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=yilozt&theme=graywhite&hide_border=true"/>
+    <a href="https://github-readme-stats.vercel.app/api/wakatime?username=yilozt&theme=graywhite&hide_border=true&langs_count=4&hide_progress=true">
+      <img src="https://github-readme-stats.vercel.app/api/wakatime?username=yilozt&theme=graywhite&hide_border=true&langs_count=4&hide_progress=true"/>
     </a>
   </p>
 </div>
