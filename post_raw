@@ -1,0 +1,18 @@
+{"query":"
+    query userQuestionProgress($userSlug: String!) {
+  userProfileUserQuestionProgress(userSlug: $userSlug) {
+    numAcceptedQuestions {
+      difficulty
+      count
+    }
+    numFailedQuestions {
+      difficulty
+      count
+    }
+    numUntouchedQuestions {
+      difficulty
+      count
+    }
+  }
+}
+    ", "variables":{"userSlug":"<USER_SLUG>"}}
