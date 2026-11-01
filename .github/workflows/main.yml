@@ -1,0 +1,62 @@
+name: Readme Stats
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # every 12 hours
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:    # Allows you to run this workflow manually from the Actions tab
+
+jobs:
+  stats:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Generate readme.md
+      uses: teoxoy/profile-readme-stats@v1
+      with:
+        token: ${{ secrets.USER_TOKEN }}
+        template: ./template.md
+        readme: ./readme.md
+    - name: Update readme.md
+      run: |
+        if [[ "$(git status --porcelain)" != "" ]]; then
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git add .
+        git commit --amend -m "update github stats"
+        git push -f
+        fi
+    - uses: athul/waka-readme@master
+      with:
+        WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        BLOCKS: ->
+    - name: fix WakaTimes & LeetCode
+      run: |
+        git pull
+
+        ./leetcode.sh
+
+        sed -ri '/<!--START_SECTION/,/<!--END_SECTION/{/(```)|(^$)|(<!--)/d; s/(>.*$)|(-.*$)//; s/ ([0-9])/ = \1/}' readme.md
+        
+        ./align.sh
+
+        cat readme.md
+        if [[ "$(git status --porcelain)" != "" ]]; then
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add .
+          git commit --amend -m "update github stats"
+          git push -f
+        fi
+    - name: Clear commit
+      run: |
+        git checkout --orphan tmp
+        git commit -m "$(date)"
+        git branch -D main
+        git branch -m tmp main
+        git push --set-upstream origin main -f
